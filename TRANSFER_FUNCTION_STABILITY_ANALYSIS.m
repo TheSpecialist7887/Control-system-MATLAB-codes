@@ -5,6 +5,7 @@ close all hidden
 num=input('Enter numerator array of transfer function= ');
 den=input('Enter denominator array of transfer function= ');
 g=tf(num,den)
+[natural_frequency,damping_ratio,poles] = damp(g)
 t=input('Enter time period (initial value:step value:final value= ');
 % t=0:0.01:10;
 y1=step(g,t);
@@ -66,5 +67,6 @@ function resp(y1,y2,g,t)
     if i=='Y' || i=='y'
         resp(y1,y2,g,t)
         
+    
     end
 end
